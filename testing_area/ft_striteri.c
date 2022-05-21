@@ -13,16 +13,13 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 	char	*output;
 	int		index;
 
-	output = (char *) malloc ((ft_strlen((char *)s) + 1) * sizeof(char));
+	//output = malloc((ft_strlen(s)) * sizeof(char));
 	index = 0;
-	if (!output)
-		return (NULL);
 	while (s[index] != '\0')
 	{
-		output[index] = f(index, s[index]);
+		f(index, &s[index]);
 		index++;
 	}
-	output[index] = '\0';
 }
 
 //
