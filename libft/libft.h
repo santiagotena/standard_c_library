@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:54:02 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/21 11:50:29 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/21 22:52:01 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -32,6 +33,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+void	ft_putchar_fd(char c, int fd);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
