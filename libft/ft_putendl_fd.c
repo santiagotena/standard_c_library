@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 23:19:19 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/21 23:45:26 by stena-he         ###   ########.fr       */
+/*   Created: 2022/05/21 23:37:00 by stena-he          #+#    #+#             */
+/*   Updated: 2022/05/21 23:45:49 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Outputs the string ’s’ to the given file descriptor.
+ * @brief Outputs the string ’s’ to the given file descriptor followed 
+ * by a newline.
  * 
  * @param s 
  * @param fd 
  */
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
