@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 13:08:36 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 17:45:28 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:20:45 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	counter = 0;
 	ptr1 = (char *)s1;
 	ptr2 = (char *)s2;
-	if (n == 0)
-	{
-		return (0);
-	}
 	while (counter < n)
 	{
 		if (ptr1[counter] != ptr2[counter])

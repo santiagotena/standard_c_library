@@ -9,10 +9,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	counter = 0;
 	ptr1 = (char *)s1;
 	ptr2 = (char *)s2;
-	if (n == 0)
-	{
-		return (0);
-	}
+	// if (n == 0)
+	// {
+	// 	return (0);
+	// }
 	while (counter < n)
 	{
 		if (ptr1[counter] != ptr2[counter])
@@ -28,7 +28,7 @@ int main(void)
 {
 	char str1[9] = "Santiago";
 	char str2[9] = "SantiaGo";
-	size_t n = 9;
+	size_t n = 0;
 
 	printf("%s\n", "memcmp:");
 	printf("%d\n", memcmp(str1, str2, n));
