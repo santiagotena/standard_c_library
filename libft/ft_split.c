@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 09:22:00 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/24 16:57:25 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:03:02 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ int     ft_rowcounter(char const *s, char c, size_t length)
     }
     return (rows);
 }
+
+void ft_insertnull(size_t length, char *temp_s, char c)
+{
+    size_t  index;
+    
+    index = 0;
+    while (index < length) 
+    {
+        if (temp_s[index] == c)
+            temp_s[index] = '\0';
+        index++;
+    }
+}
+
 /**
  * @brief Allocates (with malloc(3)) and returns an array of strings
  * obtained by splitting ’s’ using the character ’c’ as a delimiter. The
@@ -56,15 +70,7 @@ char **ft_split(char const *s, char c)
     array = (char **)calloc(rows + 1, sizeof(char *));
     if (!array)
         return (NULL);
-
-    index = 0;
-
-    while (index < length) 
-    {
-        if (temp_s[index] == c)
-            temp_s[index] = '\0';
-        index++;
-    }
+    ft_insertnull(length, temp_s, c);
 
     index = 0;
     rows = 0;
