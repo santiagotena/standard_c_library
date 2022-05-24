@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 09:22:00 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/24 11:10:25 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:27:52 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,24 @@ char    **ft_split(char const *s, char c)
     while (index < length)
     {
         if (s[index] != c && index == 0)
-          rows++;
-        if (s[index] == c && index == 0)
-          {
-            temp_s[index] = '\0';
             rows++;
-          }
-        else if (s[index] == c)
-            temp_s[index] = '\0';
-        else if (s[index] != c && s[index - 1] == c)
+        if (s[index] != c && s[index - 1] == c && index != 0)
             rows++;
         index++;
     }
     array = (char **) calloc(rows + 1, sizeof(char *));
     if (!array)
         return (NULL);
+
+    index = 0;
+
+    while (index < length)
+    {
+        if (temp_s[index] == c)
+            temp_s[index] = '\0';
+        index++;
+    }
+    
     index = 0;
     rows = 0;
     while (index < length)
@@ -71,24 +74,24 @@ char    **ft_split(char const *s, char c)
 }
 
 // Main
-// int main(void)
-// {
-//     int count_strings = 25;
-//     char **split_strings = ft_split("abc def ghi ", ' ');
+int main(void)
+{
+    int count_strings = 7;
+    char **split_strings = ft_split("abc def ghi", ' ');
     
-//     // print out the substrings, which should be each word of the sentence above
-//     for (int i = 0; i < count_strings; i++)
-//         printf("%s\n", split_strings[i]);
+    // print out the substrings, which should be each word of the sentence above
+    for (int i = 0; i < count_strings; i++)
+        printf("%s\n", split_strings[i]);
     
-//     // free the dynamically allocated space for each string
-//     for (int i = 0; i < count_strings; i++)
-//         free(split_strings[i]);
+    // free the dynamically allocated space for each string
+    for (int i = 0; i < count_strings; i++)
+        free(split_strings[i]);
     
-//     // free the dynamically allocated space for the array of pointers to strings
-//     free(split_strings);
+    // free the dynamically allocated space for the array of pointers to strings
+    free(split_strings);
   
-//   return 0;   
-// }
+  return 0;   
+}
 
 // Debugger
 
