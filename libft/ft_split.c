@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 09:22:00 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/24 09:15:37 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:10:25 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 char    **ft_split(char const *s, char c)
 {
     char    **array;
-    size_t        index;
-    int        rows;
+    size_t  index;
+    int     rows;
     char    *temp_s;
-    size_t        length;
+    size_t  length;
 
     index = 0;
-    rows = 1;
+    rows = 0;
     temp_s = ft_strdup(s);
     length = ft_strlen(s);
     while (index < length)
@@ -51,15 +51,13 @@ char    **ft_split(char const *s, char c)
             rows++;
         index++;
     }
-    array = (char **) calloc(rows , sizeof(char *)); // Was rows + 1
+    array = (char **) calloc(rows + 1, sizeof(char *));
     if (!array)
         return (NULL);
     index = 0;
     rows = 0;
-    while (index < length) // Start
+    while (index < length)
     {
-        //if (index == 0 && temp_s[index] != '\0')
-        //    rows++;
         if (temp_s[index] != '\0')
         {
             array[rows] = ft_strdup(temp_s+index);
@@ -68,185 +66,41 @@ char    **ft_split(char const *s, char c)
         }
         index++;
     }
-    array[rows] = NULL;
+    array[rows] = 0;
     return (array);
 }
 
-// #include "libft.h"
-
-// // size_t	ft_strlen(const char *str)
-// // {
-// //     int        counter;
-
-// //     counter = 0;
-// //     while (str[counter] != '\0')
-// //     {
-// //         counter += 1;
-// //     }
-// //     return (counter);
-// // }
-
-// // char    *ft_strdup(const char *s1)
-// // {
-// //     int		count;
-// //     char	*output;
-// //     int		index;
-
-// //     index = 0;
-// //     count = 0;
-// //     while (s1[index] != '\0')
-// //     {
-// //         count++;
-// //         index++;
-// //     }
-// //     output = (char *)malloc((count + 1) * sizeof(char));
-// //     index = 0;
-// //     while (index < count)
-// //     {
-// //         output[index] = s1[index];
-// //         index++;
-// //     }
-// //     output[index] = '\0';
-// //     return (output);
-// // }
-
-// /**
-//  * @brief Allocates (with malloc(3)) and returns an array of strings 
-//  * obtained by splitting ’s’ using the character ’c’ as a delimiter. The 
-//  * array must end with a NULL pointer.
-//  * 
-//  * The array of new strings resulting from the split. NULL if the 
-//  * allocation fails.
-//  * 
-//  * @param s 
-//  * @param c 
-//  * @return char** 
-//  */
-// char    **ft_split(char const *s, char c)
+// Main
+// int main(void)
 // {
-//     char    **array;
-//     size_t        index;
-//     int        rows;
-//     char    *temp_s;
-//     size_t        length;
-
-//     index = 0;
-//     rows = 1;
-//     temp_s = ft_strdup(s);
-//     length = ft_strlen(s);
-//     while (index < length)
-//     {
-//         if (s[index] != c && index == 0)
-//           rows++;
-//         if (s[index] == c && index == 0)
-//           {
-//             temp_s[index] = '\0';
-//             rows++;
-//           }
-//         else if (s[index] == c)
-//             temp_s[index] = '\0';
-//         else if (s[index] != c && s[index - 1] == c)
-//             rows++;
-//         index++;
-//     }
-//     array = (char **) calloc(rows , sizeof(char *)); // Was rows + 1
-//     if (!array)
-//         return (NULL);
-//     index = 0;
-//     rows = 0;
-//     while (index < length) // Start
-//     {
-//         //if (index == 0 && temp_s[index] != '\0')
-//         //    rows++;
-//         if (temp_s[index] != '\0')
-//         {
-//             array[rows] = ft_strdup(temp_s+index);
-//             index = index + ft_strlen(temp_s+index);
-//             rows++;
-//         }
-//         index++;
-//     }
-//     array[rows] = NULL;
-//     return (array);
-// }
-//  * @brief Allocates (with malloc(3)) and returns an array of strings 
-//  * obtained by splitting ’s’ using the character ’c’ as a delimiter. The 
-//  * array must end with a NULL pointer.
-//  * 
-//  * The array of new strings resulting from the split. NULL if the 
-//  * allocation fails.
-//  * 
-//  * @param s 
-//  * @param c 
-//  * @return char** 
-//  */
-// char    **ft_split(char const *s, char c)
-// {
-//     char    **array;
-//     size_t        index;
-//     int        rows;
-//     char    *temp_s;
-//     size_t        length;
-
-//     index = 0;
-//     rows = 1;
-//     temp_s = ft_strdup(s);
-//     length = ft_strlen(s);
-//     while (index < length)
-//     {
-//         if (s[index] != c && index == 0)
-//           rows++;
-//         if (s[index] == c && index == 0)
-//           {
-//             temp_s[index] = '\0';
-//             rows++;
-//           }
-//         else if (s[index] == c)
-//             temp_s[index] = '\0';
-//         else if (s[index] != c && s[index - 1] == c)
-//             rows++;
-//         index++;
-//     }
-//     array = (char **) calloc(rows , sizeof(char *)); // Was rows + 1
-//     if (!array)
-//         return (NULL);
-//     index = 0;
-//     rows = 0;
-//     while (index < length) // Start
-//     {
-//         //if (index == 0 && temp_s[index] != '\0')
-//         //    rows++;
-//         if (temp_s[index] != '\0')
-//         {
-//             array[rows] = ft_strdup(temp_s+index);
-//             index = index + ft_strlen(temp_s+index);
-//             rows++;
-//         }
-//         index++;
-//     }
-//     array[rows] = NULL;
-//     return (array);
+//     int count_strings = 25;
+//     char **split_strings = ft_split("abc def ghi ", ' ');
+    
+//     // print out the substrings, which should be each word of the sentence above
+//     for (int i = 0; i < count_strings; i++)
+//         printf("%s\n", split_strings[i]);
+    
+//     // free the dynamically allocated space for each string
+//     for (int i = 0; i < count_strings; i++)
+//         free(split_strings[i]);
+    
+//     // free the dynamically allocated space for the array of pointers to strings
+//     free(split_strings);
+  
+//   return 0;   
 // }
 
-// int    main(void)
+// Debugger
+
+// int main(void)
 // {
-//     ft_split("aaa", 'a');
+//     ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
 //     return (0);
 // }
 
-// int	main(void)
-// {
-// 	ft_split("abc def ghi", ' ');
-// 	return (0);
-// }
-
-///////////// Python Tutor
-
-// # include <ctype.h>
-// # include <stdio.h>
-// # include <stdlib.h>
-// # include <string.h>
-// # include <unistd.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
 
 // size_t    ft_strlen(const char *str)
 // {
@@ -282,63 +136,4 @@ char    **ft_split(char const *s, char c)
 //     }
 //     output[index] = '\0';
 //     return (output);
-// }
-
-// /**
-//  * @brief Allocates (with malloc(3)) and returns an array of strings 
-//  * obtained by splitting ’s’ using the character ’c’ as a delimiter. The 
-//  * array must end with a NULL pointer.
-//  * 
-//  * The array of new strings resulting from the split. NULL if the 
-//  * allocation fails.
-//  * 
-//  * @param s 
-//  * @param c 
-//  * @return char** 
-//  */
-// char    **ft_split(char const *s, char c)
-// {
-//     char    **array;
-//     size_t        index;
-//     int        rows;
-//     char    *temp_s;
-//     size_t        length;
-
-//     index = 0;
-//     rows = 1;
-//     temp_s = ft_strdup(s);
-//     length = ft_strlen(s);
-//     while (index < length)
-//     {
-//         if (s[index] == c && index == 0)
-//             temp_s[index] = '\0';
-//         else if (s[index] == c)
-//             temp_s[index] = '\0';
-//         else if (s[index] != c && s[index - 1] == c)
-//             rows++;
-//         index++;
-//     }
-//     array = (char **) malloc(rows * sizeof(char *)); // Was rows + 1
-//     if (!array)
-//         return (NULL);
-//     index = 0;
-//     rows = 0;
-//     while (index < length)
-//     {
-//         if (temp_s[index] != '\0')
-//         {
-//             array[rows] = ft_strdup(temp_s+index);
-//             index = index + ft_strlen(temp_s+index);
-//             rows++;
-//         }
-//         index++;
-//     }
-//     array[rows] = NULL;
-//     return (array);
-// }
-
-// int    main(void)
-// {
-//     ft_split("abc def ghi", ' ');
-//     return (0);
 // }
