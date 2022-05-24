@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 18:05:02 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 17:52:43 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:22:13 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strdup(const char *s1)
 		index++;
 	}
 	output = (char *)malloc((count + 1) * sizeof(char));
+	if (!output)
+		return (NULL);
 	index = 0;
 	while (index < count)
 	{
