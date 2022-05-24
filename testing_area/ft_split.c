@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 09:22:00 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/24 13:36:58 by stena-he         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 /**
@@ -68,3 +56,78 @@ char **ft_split(char const *s, char c) {
     array[rows] = 0;
     return (array);
 }
+
+// Main
+// int main(void)
+// {
+//     int count_strings = 7;
+//     char **split_strings = ft_split("abc def ghi", ' ');
+
+//     // print out the substrings, which should be each word of the sentence above
+//     for (int i = 0; i < count_strings; i++)
+//         printf("%s\n", split_strings[i]);
+
+//     // free the dynamically allocated space for each string
+//     for (int i = 0; i < count_strings; i++)
+//         free(split_strings[i]);
+
+//     // free the dynamically allocated space for the array of pointers to strings
+//     free(split_strings);
+
+//   return 0;
+// }
+
+// Debugger
+
+// int main(void) {
+//     int count_strings = 7;
+//     char **split_strings = ft_split("abc def ghi", ' ');
+
+//     // print out the substrings, which should be each word of the sentence above
+//     for (int i = 0; i < count_strings; i++)
+//         printf("%s\n", split_strings[i]);
+
+//     // free the dynamically allocated space for each string
+//     for (int i = 0; i < count_strings; i++)
+//         free(split_strings[i]);
+
+//     // free the dynamically allocated space for the array of pointers to strings
+//     free(split_strings);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// size_t ft_strlen(const char *str) {
+//     int counter;
+
+//     counter = 0;
+//     while (str[counter] != '\0') {
+//         counter += 1;
+//     }
+//     return (counter);
+// }
+
+// char *ft_strdup(const char *s1) {
+//     int count;
+//     char *output;
+//     int index;
+
+//     index = 0;
+//     count = 0;
+//     while (s1[index] != '\0') {
+//         count++;
+//         index++;
+//     }
+//     output = (char *)malloc((count + 1) * sizeof(char));
+//     index = 0;
+//     while (index < count) {
+//         output[index] = s1[index];
+//         index++;
+//     }
+//     output[index] = '\0';
+//     return (output);
+// }
