@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:59:58 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 18:03:14 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/24 01:09:42 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param str 
  * @return size_t 
  */
-size_t	ft_strlen(char str[])
+size_t	ft_strlen(const char *str)
 {
 	size_t		counter;
 
