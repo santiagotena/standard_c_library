@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 17:08:45 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/26 18:26:23 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:33:48 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * ’content’. The variable ’next’ is initialized to NULL.
  * 
  * Returns the new node.
- * @param content 
+ * @param content The content to create the node with.
  * @return t_list* 
  */
 t_list	*ft_lstnew(void *content)
