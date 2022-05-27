@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 17:08:45 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/26 19:34:27 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:36:38 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*output;
 
 	output = malloc(sizeof(t_list));
+	if (!output)
+		return (NULL);
 	output->content = content;
 	output->next = NULL;
 	return (output);
