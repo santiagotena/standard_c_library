@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:56:32 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/28 15:58:41 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:24:57 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,23 +54,27 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
  * node if needed.
  * @return t_list* 
  */
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*temporary;
-	t_list	*new;
-
-	temporary = lst;
-	while (temporary != NULL)
+	t_list	*new_node;
+	t_list	*new_head = NULL;
+	int		flag;
+	
+	flag = 0;
+	if (!lst)
+		return NULL;
+	new_head = ft_lstnew(f(lst->content));
+	lst = lst->next;
+	while (lst != NULL)
 	{
-		new = ft_lstnew(f(temporary->content));
-		if (!new)
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
 		{
-			del(new->content);
+			del(new_node->content);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, new->content);
-		temporary = temporary->next;
-		new = temporary->next;
+		ft_lstadd_back(&new_head, new_node);
+		lst = lst->next;
 	}
-	return (new);
+	return (new_head);
 }
