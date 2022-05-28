@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 19:40:51 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/27 20:13:31 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/28 11:53:17 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	while(last_node->next != NULL)
+	while (last_node->next != NULL)
 		last_node = last_node->next;
-
 	last_node->next = new;
 	return ;
 }
