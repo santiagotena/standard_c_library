@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:56:32 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/28 15:34:49 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/28 15:58:41 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,22 @@ t_list	*ft_lstnew(void *content)
 	output->content = content;
 	output->next = NULL;
 	return (output);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last_node;
+
+	last_node = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (last_node->next != NULL)
+		last_node = last_node->next;
+	last_node->next = new;
+	return ;
 }
 
 /**
@@ -52,7 +68,9 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			del(new->content);
 			return (NULL);
 		}
+		ft_lstadd_back(&new, new->content);
 		temporary = temporary->next;
+		new = temporary->next;
 	}
 	return (new);
 }
