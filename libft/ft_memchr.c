@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 15:54:05 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 17:41:41 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/29 18:37:23 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	index = 0;
 	while (index < n)
 	{
-		if (ptr[index] == c)
+		if (ptr[index] == (unsigned char) c)
 		{
 			return (&ptr[index]);
 		}

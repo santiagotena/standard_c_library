@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 09:32:48 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 18:03:33 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/29 19:07:22 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
  * NUL-terminating the result if dstsize is not 0.
  * 
  * If the src and dst strings overlap, the behavior is undefined.
+ * 
+ * Returns the length of src.
  * 
  * @param dst 
  * @param src 

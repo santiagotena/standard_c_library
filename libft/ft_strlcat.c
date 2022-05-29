@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:38:55 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 18:03:27 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/29 19:12:26 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
  * is incorrect or that dst is not a proper string). 
  * 
  * If the src and dst strings overlap, the behavior is undefined.
+ * 
+ * Returns the initial length of dst plus the length of src.
  * 
  * @param dst 
  * @param src 
@@ -46,6 +48,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst_counter++;
 	}
 	dst_size = dst_counter;
+	if (dst_size <= 0)
+		return (ft_strlen((char *)src) + dst_size);
 	if (dstsize < dst_counter)
 		return (ft_strlen((char *)src) + dstsize);
 	while (dst_counter < dstsize - 1 && src[src_index] != '\0')

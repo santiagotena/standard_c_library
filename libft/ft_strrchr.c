@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:52:04 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/18 18:13:33 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/29 19:00:07 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strrchr(const char *s, int c)
 	output = NULL;
 	while (ptr[index] != '\0')
 	{
-		if (ptr[index] == c)
+		if (ptr[index] == (unsigned char) c)
 		{
 			output = &ptr[index];
 		}
