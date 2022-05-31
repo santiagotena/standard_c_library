@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 15:54:05 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/29 18:37:23 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:18:53 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	index;
-	char	*ptr;
+	unsigned char	*ptr;
 
-	ptr = (char *)s;
+	ptr = (unsigned char *)s;
 	index = 0;
 	while (index < n)
 	{

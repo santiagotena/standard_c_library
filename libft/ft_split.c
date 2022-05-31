@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:18:27 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/24 17:48:32 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:11:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	temp_s = ft_strdup(s);
 	length = ft_strlen(s);
 	rows = ft_rowcounter(s, c, length);
-	array = (char **)calloc(rows + 1, sizeof(char *));
+	array = (char **)ft_calloc(rows + 1, sizeof(char *));
 	if (!array)
 		return (NULL);
 	ft_insertnull(length, temp_s, c);
