@@ -6,14 +6,14 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:04:54 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/21 12:07:45 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/02 00:00:37 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_forward(size_t s1_index, char *output,
-					size_t set_index, char const *set)
+size_t	ft_forward(size_t s1_index, char *output, \
+	size_t set_index, char const *set)
 {
 	int		match;
 
