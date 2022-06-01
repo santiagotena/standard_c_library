@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:38:55 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/01 17:45:39 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/01 23:40:44 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = dst_counter;
 	if (dstsize < dst_counter)
 		return (ft_strlen(src) + dstsize);
-	while (dst_counter < dstsize - 1 && (dst_counter <= (dst_len + ft_strlen(src))))
+	if (dstsize <= 0)
+		return (ft_strlen(src) + dst_len);
+	while (dst_counter < dstsize - 1 && \
+		(dst_counter <= (dst_len + ft_strlen(src))))
 	{
-		dst[dst_counter] = src[src_index];
+		dst[dst_counter] = src[src_index++];
 		dst_counter++;
-		src_index++;
 	}
 	dst[dst_counter] = '\0';
 	return (ft_strlen(src) + dst_len);
@@ -79,8 +81,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // int main(void)
 // {
 // 	char dest[30]; memset(dest, 0, 30);
-// 	printf("%s", dest);
-// 	printf("%lu", ft_strlcat(dest, "123", 3));
-// 	printf("%s", dest);
+// 	size_t output;
+
+// 	output = ft_strlcat(dest, "123", 0);
+// 	printf("%s\n", dest);
+// 	printf("%lu\n", );
+// 	printf("%s\n", dest);
 // 	return (0);
 // }
