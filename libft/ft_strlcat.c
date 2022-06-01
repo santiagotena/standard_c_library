@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:38:55 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/31 15:33:07 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:45:39 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,50 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_counter;
 	size_t	src_index;
-	size_t	dst_size;
+	size_t	dst_len;
 
 	dst_counter = 0;
 	src_index = 0;
 	while (dst[dst_counter] != '\0')
 	{
 		if (dstsize - 1 == dst_counter)
-			return (ft_strlen((char *)src) + dst_counter + 1);
+			return (ft_strlen(src) + dst_counter + 1);
 		dst_counter++;
 	}
-	dst_size = dst_counter;
-	if (dst_size <= 0)
-		return (ft_strlen((char *)src) + dst_size);
+	dst_len = dst_counter;
 	if (dstsize < dst_counter)
-		return (ft_strlen((char *)src) + dstsize);
-	while (dst_counter < dstsize - 1 && src[src_index] != '\0')
+		return (ft_strlen(src) + dstsize);
+	while (dst_counter < dstsize - 1 && (dst_counter <= (dst_len + ft_strlen(src))))
 	{
 		dst[dst_counter] = src[src_index];
 		dst_counter++;
 		src_index++;
 	}
 	dst[dst_counter] = '\0';
-	return (ft_strlen((char *)src) + dst_size);
+	return (ft_strlen(src) + dst_len);
 }
+
+// // Debugger
+
+// #include <stdio.h>
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t		counter;
+
+// 	counter = 0;
+// 	while (str[counter] != '\0')
+// 	{
+// 		counter += 1;
+// 	}
+// 	return (counter);
+// }
+
+// int main(void)
+// {
+// 	char dest[30]; memset(dest, 0, 30);
+// 	printf("%s", dest);
+// 	printf("%lu", ft_strlcat(dest, "123", 3));
+// 	printf("%s", dest);
+// 	return (0);
+// }
