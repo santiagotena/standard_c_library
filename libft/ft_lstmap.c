@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:56:32 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/28 17:24:57 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:56:54 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_node;
-	t_list	*new_head = NULL;
+	t_list	*new_head;
 	int		flag;
-	
+
 	flag = 0;
+	new_head = NULL;
 	if (!lst)
-		return NULL;
+		return (NULL);
 	new_head = ft_lstnew(f(lst->content));
 	lst = lst->next;
 	while (lst != NULL)
