@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:38:55 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/01 23:40:44 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:55:13 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,41 +51,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize < dst_counter)
 		return (ft_strlen(src) + dstsize);
 	if (dstsize <= 0)
+	{
+		dst = "";
 		return (ft_strlen(src) + dst_len);
+	}
 	while (dst_counter < dstsize - 1 && \
 		(dst_counter <= (dst_len + ft_strlen(src))))
-	{
-		dst[dst_counter] = src[src_index++];
-		dst_counter++;
-	}
+		dst[dst_counter++] = src[src_index++];
 	dst[dst_counter] = '\0';
 	return (ft_strlen(src) + dst_len);
 }
-
-// // Debugger
-
-// #include <stdio.h>
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t		counter;
-
-// 	counter = 0;
-// 	while (str[counter] != '\0')
-// 	{
-// 		counter += 1;
-// 	}
-// 	return (counter);
-// }
-
-// int main(void)
-// {
-// 	char dest[30]; memset(dest, 0, 30);
-// 	size_t output;
-
-// 	output = ft_strlcat(dest, "123", 0);
-// 	printf("%s\n", dest);
-// 	printf("%lu\n", );
-// 	printf("%s\n", dest);
-// 	return (0);
-// }
