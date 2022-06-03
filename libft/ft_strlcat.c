@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:38:55 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/02 15:55:13 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/03 03:18:10 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (ft_strlen(src) + dstsize);
 	if (dstsize <= 0)
 	{
-		dst = "";
+		dst = "\0";
 		return (ft_strlen(src) + dst_len);
 	}
 	while (dst_counter < dstsize - 1 && \
