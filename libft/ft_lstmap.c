@@ -6,39 +6,11 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:56:32 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/01 15:56:54 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:47:37 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*output;
-
-	output = malloc(sizeof(t_list));
-	if (!output)
-		return (NULL);
-	output->content = content;
-	output->next = NULL;
-	return (output);
-}
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*last_node;
-
-	last_node = *lst;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	while (last_node->next != NULL)
-		last_node = last_node->next;
-	last_node->next = new;
-	return ;
-}
 
 /**
  * @brief Iterates the list ’lst’ and applies the function ’f’ on the 
