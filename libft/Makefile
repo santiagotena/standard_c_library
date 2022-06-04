@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 14:26:53 by stena-he          #+#    #+#              #
-#    Updated: 2022/06/01 23:58:27 by stena-he         ###   ########.fr        #
+#    Updated: 2022/06/04 16:51:34 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,24 +29,24 @@ SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 			ft_lstmap.c 
 			
-OUT_SRC = ${SRC:%.c=%.o}
+OUT_SRC = $(SRC:%.c=%.o)
 
-OUT_BONUS = ${SRC_BONUS:%.c=%.o}
+OUT_BONUS = $(SRC_BONUS:%.c=%.o)
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OUT_SRC} ${HEADER}
-	ar rcs ${NAME} ${OUT_SRC}
+$(NAME): $(OUT_SRC)
+	ar -rcs	$(NAME)	$(OUT_SRC)
+
+bonus: $(OUT_BONUS) $(OUT_SRC)
+	ar -rcs $(NAME) $(OUT_SRC) $(OUT_BONUS)
 
 clean:
-	rm -f ${OUT_SRC} {OUT_BONUS}
+	rm -f $(OUT_SRC) $(OUT_BONUS)
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean all
 
-bonus: ${OUT_BONUS} ${HEADER}
-	ar rcs ${NAME} ${OUT_BONUS}
-	
-.PHONY: re fclean clean all bonus
+.PHONY: all clean fclean re bonus
