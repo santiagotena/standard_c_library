@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:56:32 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/03 19:47:37 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:22:48 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst)
 		return (NULL);
 	new_head = ft_lstnew(f(lst->content));
+	if (!new_head)
+		{
+			del(new_head->content);
+			return (NULL);
+		}
 	lst = lst->next;
 	while (lst != NULL)
 	{
