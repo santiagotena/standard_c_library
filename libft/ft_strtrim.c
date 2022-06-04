@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:04:54 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/04 02:27:59 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 10:35:20 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static size_t	ft_reverse(size_t rev_s1_index, size_t set_index, \
 			set_index++;
 		}
 		set_index = 0;
-		if (rev_s1_index == (size_t) -1)
+		if (rev_s1_index == (size_t) - 1)
 		{
 			rev_s1_index = 0;
 			break ;
@@ -97,84 +97,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (output);
 }
-
-// //Debugger
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t		counter;
-
-// 	counter = 0;
-// 	while (str[counter] != '\0')
-// 	{
-// 		counter += 1;
-// 	}
-// 	return (counter);
-// }
-
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	char	*output;
-// 	size_t	substr_len;
-// 	size_t	output_index;
-
-// 	if (s == NULL)
-// 		return (NULL);
-// 	substr_len = ft_strlen(s) - start;
-// 	if (start >= ft_strlen(s))
-// 		return (ft_strdup(""));
-// 	if ((size_t) ft_strlen(s) < len)
-// 		len = ft_strlen(s);
-// 	output = (char *)malloc((substr_len + 1) * sizeof(char));
-// 	if (!output)
-// 		return (NULL);
-// 	output_index = 0;
-// 	while (output_index < len)
-// 	{
-// 		output[output_index] = s[start];
-// 		output_index++;
-// 		start++;
-// 	}
-// 	output[output_index] = '\0';
-// 	return (output);
-// }
-
-// char	*ft_strdup(const char *s1)
-// {
-// 	size_t	count;
-// 	char	*output;
-// 	size_t	index;
-
-// 	index = 0;
-// 	count = 0;
-// 	while (s1[index] != '\0')
-// 	{
-// 		count++;
-// 		index++;
-// 	}
-// 	output = (char *)malloc((count + 1) * sizeof(char));
-// 	if (!output)
-// 		return (NULL);
-// 	index = 0;
-// 	while (index < count)
-// 	{
-// 		output[index] = s1[index];
-// 		index++;
-// 	}
-// 	output[index] = '\0';
-// 	return (output);
-// }
-
-// # include <ctype.h>
-// # include <stdio.h>
-// # include <stdlib.h>
-// # include <string.h>
-// # include <unistd.h>
-
-// int main(void)
-// {
-// 	char s1[] = "tripouille   xxx";
-// 	printf("%s\n", s1);
-// 	printf("%s\n", ft_strtrim(s1, " x"));
-// 	return (0);
-// }
