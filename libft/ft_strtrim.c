@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:04:54 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/04 01:19:30 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 02:27:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static size_t	ft_reverse(size_t rev_s1_index, size_t set_index, \
 			set_index++;
 		}
 		set_index = 0;
-		if (rev_s1_index == (size_t) 1)
+		if (rev_s1_index == (size_t) -1)
 		{
 			rev_s1_index = 0;
 			break ;
@@ -125,7 +125,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 		return (ft_strdup(""));
 // 	if ((size_t) ft_strlen(s) < len)
 // 		len = ft_strlen(s);
-// 	output = (char *)malloc(substr_len * sizeof(char));
+// 	output = (char *)malloc((substr_len + 1) * sizeof(char));
 // 	if (!output)
 // 		return (NULL);
 // 	output_index = 0;
@@ -173,8 +173,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main(void)
 // {
-// 	char s1[] = "          ";
+// 	char s1[] = "tripouille   xxx";
 // 	printf("%s\n", s1);
-// 	printf("%s\n", ft_strtrim(s1, " "));
+// 	printf("%s\n", ft_strtrim(s1, " x"));
 // 	return (0);
 // }
