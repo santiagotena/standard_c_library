@@ -6,13 +6,13 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:18:27 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/31 15:11:59 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:06:36 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_rowcounter(char const *s, char c, size_t length)
+static int	ft_rowcounter(char const *s, char c, size_t length)
 {
 	size_t	index;
 	int		rows;
@@ -31,37 +31,27 @@ int	ft_rowcounter(char const *s, char c, size_t length)
 	return (rows);
 }
 
-void	ft_insertnull(size_t length, char *temp_s, char c)
-{
-	size_t	index;
-
-	index = 0;
-	while (index < length)
-	{
-		if (temp_s[index] == c)
-			temp_s[index] = '\0';
-		index++;
-	}
-}
-
-int	ft_arrfill(char *temp_s, char **array, size_t length)
+static void	ft_arrfill(char const *s, char **array, char c, size_t length)
 {
 	size_t	index;
 	int		rows;
+	int		end_index;
 
 	index = 0;
 	rows = 0;
 	while (index < length)
 	{
-		if (temp_s[index] != '\0')
+		if (s[index] != c)
 		{
-			array[rows] = ft_strdup(temp_s + index);
-			index = index + ft_strlen(temp_s + index);
+			end_index = index;
+			while (s[end_index] != c && s[end_index] != '\0')
+				end_index++;
+			array[rows] = ft_substr(s, index, (end_index - index));
+			index = index + (end_index - index);
 			rows++;
 		}
 		index++;
 	}
-	return (rows);
 }
 
 /**
@@ -80,17 +70,14 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	int		rows;
-	char	*temp_s;
 	size_t	length;
 
-	temp_s = ft_strdup(s);
 	length = ft_strlen(s);
 	rows = ft_rowcounter(s, c, length);
-	array = (char **)ft_calloc(rows + 1, sizeof(char *));
+	array = (char **) malloc((rows + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	ft_insertnull(length, temp_s, c);
-	rows = ft_arrfill(temp_s, array, length);
+	ft_arrfill(s, array, c, length);
 	array[rows] = 0;
 	return (array);
 }
