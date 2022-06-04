@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:18:27 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/04 15:06:36 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:43:45 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ static int	ft_rowcounter(char const *s, char c, size_t length)
 		if (s[index] != c && index == 0)
 			rows++;
 		if (index != 0)
+		{
 			if (s[index] != c && s[index - 1] == c)
-				rows++;
+			rows++;
+		}
 		index++;
 	}
 	return (rows);
