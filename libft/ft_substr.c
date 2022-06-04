@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 09:23:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/02 00:16:55 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/04 02:15:53 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	substr_len = ft_strlen(s) - start;
+	substr_len = ft_strlen(s) - start + 1;
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if ((size_t) ft_strlen(s) < len)
 		len = ft_strlen(s);
-	output = (char *)malloc(substr_len * sizeof(char));
+	output = (char *)malloc((substr_len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
 	output_index = 0;
