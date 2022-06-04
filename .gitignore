@@ -5,3 +5,4 @@ libft/libftTester/
 
 # Ignore output files
 libft/*.o
+*.a
