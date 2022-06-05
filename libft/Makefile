@@ -6,13 +6,13 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 14:26:53 by stena-he          #+#    #+#              #
-#    Updated: 2022/06/04 16:51:34 by stena-he         ###   ########.fr        #
+#    Updated: 2022/06/05 12:01:20 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 	libft.a
 
-CCFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
