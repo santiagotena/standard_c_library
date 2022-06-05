@@ -6,15 +6,17 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 14:26:53 by stena-he          #+#    #+#              #
-#    Updated: 2022/06/05 12:01:20 by stena-he         ###   ########.fr        #
+#    Updated: 2022/06/05 14:16:55 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 	libft.a
 
+CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
 
-HEADER = libft.h
+RM = rm -f
 
 SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
@@ -38,14 +40,14 @@ all: $(NAME)
 $(NAME): $(OUT_SRC)
 	ar -rcs	$(NAME)	$(OUT_SRC)
 
-bonus: $(OUT_BONUS) $(OUT_SRC)
-	ar -rcs $(NAME) $(OUT_SRC) $(OUT_BONUS)
+bonus: $(OUT_BONUS)
+	ar -rcs $(NAME) $(OUT_BONUS)
 
 clean:
-	rm -f $(OUT_SRC) $(OUT_BONUS)
+	${RM} $(OUT_SRC) $(OUT_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	${RM} $(NAME)
 
 re: fclean all
 
