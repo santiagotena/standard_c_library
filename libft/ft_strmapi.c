@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:25:16 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/21 12:03:01 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:16:56 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*output;
 	int		index;
 
+	if (!s)
+		return (NULL);
 	output = (char *) malloc ((ft_strlen((char *)s) + 1) * sizeof(char));
 	if (!output)
 		return (NULL);

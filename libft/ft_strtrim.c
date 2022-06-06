@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:04:54 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/04 10:35:20 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:15:09 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	rev_s1_index;
 	size_t	set_index;
 
+	if (!s1 || !set)
+		return (NULL);
 	output = (char *) s1;
 	s1_index = 0;
 	rev_s1_index = ft_strlen(s1) - 1;

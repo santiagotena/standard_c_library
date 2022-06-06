@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:18:27 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/04 22:43:45 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:16:19 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ char	**ft_split(char const *s, char c)
 	int		rows;
 	size_t	length;
 
+	if (!s)
+		return (NULL);
 	length = ft_strlen(s);
 	rows = ft_rowcounter(s, c, length);
 	array = (char **) malloc((rows + 1) * sizeof(char *));
