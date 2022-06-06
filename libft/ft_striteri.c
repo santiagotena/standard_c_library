@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 11:51:29 by stena-he          #+#    #+#             */
-/*   Updated: 2022/05/21 20:51:43 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:22:00 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int		index;
 
 	index = 0;
+	if (!s)
+		return ;
 	while (s[index] != '\0')
 	{
 		f(index, &s[index]);
