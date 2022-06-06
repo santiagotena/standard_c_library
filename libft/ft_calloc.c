@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 11:34:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/03 16:59:29 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/06 22:17:32 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	*ft_calloc(size_t count, size_t size)
 	output = malloc(count * size);
 	if (!output)
 		return (NULL);
-	ft_bzero(output, count);
+	ft_bzero(output, count * size);
 	return (output);
 }
