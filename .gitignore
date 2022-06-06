@@ -1,7 +1,7 @@
 # Ignore testers
 libft-war-machine/
 libft-unit-test/
-libft/libftTester/
+libftTester/
 
 # Ignore output files
 libft/*.o
