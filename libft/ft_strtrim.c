@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:04:54 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/07 00:15:09 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:34:57 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static size_t	ft_reverse(size_t rev_s1_index, size_t set_index, \
 	int		match;
 
 	match = 0;
-	while (rev_s1_index >= 0)
+	while ((int) rev_s1_index >= 0)
 	{
 		while (set_index < ft_strlen(set))
 		{
