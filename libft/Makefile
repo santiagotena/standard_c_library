@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 14:26:53 by stena-he          #+#    #+#              #
-#    Updated: 2022/06/05 14:16:55 by stena-he         ###   ########.fr        #
+#    Updated: 2022/06/08 11:32:20 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ all: $(NAME)
 $(NAME): $(OUT_SRC)
 	ar -rcs	$(NAME)	$(OUT_SRC)
 
-bonus: $(OUT_BONUS)
-	ar -rcs $(NAME) $(OUT_BONUS)
+bonus: $(OUT_SRC) $(OUT_BONUS)
+	ar -rcs $(NAME) $(OUT_SRC) $(OUT_BONUS)
 
 clean:
 	${RM} $(OUT_SRC) $(OUT_BONUS)
