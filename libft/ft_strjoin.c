@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:27:37 by stena-he          #+#    #+#             */
-/*   Updated: 2022/06/06 23:22:03 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:52:00 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	output = (char *)malloc(ft_strlen((char *)s1) \
-			+ ft_strlen((char *)s2) + 1 * sizeof(char));
+	output = (char *)malloc(ft_strlen(s1) \
+			+ ft_strlen(s2) + 1 * sizeof(char));
 	if (!output)
 		return (NULL);
 	output_index = 0;
 	index = 0;
-	while (output_index < ft_strlen((char *)s1))
+	while (output_index < ft_strlen(s1))
 	{
 		output[output_index++] = s1[index++];
 	}
 	index = 0;
-	while (output_index < ft_strlen((char *)s1) + ft_strlen((char *)s2))
+	while (output_index < ft_strlen(s1) + ft_strlen(s2))
 	{
 		output[output_index++] = s2[index++];
 	}
