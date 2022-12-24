@@ -13,6 +13,4 @@ functions, their proper implementation and use.
  
 # Usage
  
-`make` to compile mandatory functions.
- 
-`make bonus` to compile with bonus functions.
+Use `make` to compile the mandatory functions and `make bonus` to compile with bonus functions.
