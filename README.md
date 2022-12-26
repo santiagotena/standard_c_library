@@ -7,6 +7,8 @@
 This is the first project of the 42 Wolfsburg Software Engineering School.
  
 The objective of the project is to create our own C standard library in an attempt to understand how a number of common functions work.
+
+During this project, it was important to get familiar with finding and reading documentation, work with pointers and to create a header file and Makefile.
  
 For a number of future assignments, we will be able to use this self-made library where we will become more familiar with the replicated 
 functions, their proper implementation and use.
